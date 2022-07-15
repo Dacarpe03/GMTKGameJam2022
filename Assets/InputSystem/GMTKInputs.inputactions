@@ -34,21 +34,21 @@
                 },
                 {
                     "name": "P1Action",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "78cb60d0-b362-4cf5-a7ea-3824cda999bd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "P2Action",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "fe15bbc2-2ac9-45aa-8925-6392beb5a1a9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
