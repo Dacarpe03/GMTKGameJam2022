@@ -9,10 +9,19 @@ public class RoundInstructionsHandlerScript : MonoBehaviour
     private bool P1Ready = false;
     private bool P2Ready = false;
 
+    [SerializeField] TextMeshProUGUI p1Score;
+    [SerializeField] TextMeshProUGUI p2Score;
+
     [SerializeField] TextMeshProUGUI p1ReadyText;
     [SerializeField] TextMeshProUGUI p2ReadyText;
     [SerializeField] List<GameObject> destroyTexts;
 
+    void Awake(){
+        ScoreKeeperScript scoreKeeperScript = FindObjectOfType<ScoreKeeperScript>();
+        p1Score.text = scoreKeeperScript.GetP1Score().ToString() + "/7";
+        p2Score.text = scoreKeeperScript.GetP2Score().ToString() + "/7";
+    }
+    
     void Update(){
         if (P1Ready){
             p1ReadyText.text = "P1 Ready";
