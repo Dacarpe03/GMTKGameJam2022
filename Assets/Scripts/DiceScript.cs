@@ -39,8 +39,8 @@ public class DiceScript : MonoBehaviour
             yield return new WaitForSeconds(swapTime);
         }
         
-        yield return new WaitForSeconds(1f);
         refereeScript.SetRoundPoints(faceList[5]);
+        yield return new WaitForSeconds(1.5f);
         Destroy(this.gameObject);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class RefereeScript : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class RefereeScript : MonoBehaviour
     private bool diceSpawned = false;
     private int roundPoints;
     [SerializeField] GameObject dice;
-    
+    [SerializeField] TextMeshProUGUI roundPointsText;
     private bool P1Finished;
     private bool P2Finished;
 
@@ -56,6 +57,7 @@ public class RefereeScript : MonoBehaviour
 
     public void SetRoundPoints(int points){
         roundPoints = points;
+        roundPointsText.text = "Winner gets " + points.ToString() + " points";
         Debug.Log("Round points: " + roundPoints.ToString());
     }
 
