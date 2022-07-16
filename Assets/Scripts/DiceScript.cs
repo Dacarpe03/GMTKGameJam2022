@@ -40,7 +40,14 @@ public class DiceScript : MonoBehaviour
         }
         
         refereeScript.SetRoundPoints(faceList[5]);
+        
         yield return new WaitForSeconds(1.5f);
+
+        IEnumerable<IPlayer> players = FindObjectsOfType<MonoBehaviour>().OfType<IPlayer>();
+        foreach(IPlayer p in players){
+            p.CanStart();
+        }
+
         Destroy(this.gameObject);
     }
 }
