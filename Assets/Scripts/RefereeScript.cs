@@ -84,6 +84,7 @@ public class RefereeScript : MonoBehaviour
                 scoreKeeperScript.AddP2Score(roundPoints);
                 roundPointsText.text = "Player 2 wins " + roundPoints.ToString() + " points";
             }else{
+                roundPointsText.text = "Tie";
                 StartCoroutine(scoreKeeperScript.NextGame());
             }
             resultsCounted = true;

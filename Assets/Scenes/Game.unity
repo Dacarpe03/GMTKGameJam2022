@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOne: 0
-  count: 2
+  count: 4
 --- !u!212 &1483366100
 SpriteRenderer:
   m_ObjectHideFlags: 0
