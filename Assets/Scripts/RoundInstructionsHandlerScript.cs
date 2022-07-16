@@ -42,7 +42,6 @@ public class RoundInstructionsHandlerScript : MonoBehaviour
 
     void OnP1Action(InputValue value){
         P1Ready = value.isPressed;
-        Debug.Log("Aqui");
     }
 
     void OnP2Action(InputValue value){
