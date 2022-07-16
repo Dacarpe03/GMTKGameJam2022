@@ -22,9 +22,9 @@ public class RefereeScript : MonoBehaviour
 
     private void Update() {
         if (P1Ready && P2Ready){
-            SpawnDice();
+            RollDice();
         }
-        
+
         if (P1Finished && P2Finished){
             CountResults();
         }
@@ -38,7 +38,7 @@ public class RefereeScript : MonoBehaviour
         P2Ready = value.isPressed;
     }
 
-    void SpawnDice(){
+    void RollDice(){
         if (P1Ready && P2Ready && !diceSpawned){
             Debug.Log("SpawningDice");
             Instantiate(dice, transform.position, Quaternion.identity);
