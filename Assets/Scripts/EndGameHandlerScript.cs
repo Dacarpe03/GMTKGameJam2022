@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class EndGameHandlerScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI resultText;
@@ -18,10 +18,15 @@ public class EndGameHandlerScript : MonoBehaviour
         P1Score.text = score.GetP1Score().ToString() + "/7";
         P2Score.text = score.GetP2Score().ToString() + "/7";
         if (score.GetP1Score() >= 7){
-            resultText.text = "Player 1 wins";
+            resultText.text = "Player 1 wins";  
         }else{
             resultText.text = "Player 2 wins";
         }
+    }
+
+    public void LoadStart(){
+        Destroy(score.gameObject);
+        SceneManager.LoadScene(0);
     }
 
 }

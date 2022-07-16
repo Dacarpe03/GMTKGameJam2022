@@ -33,8 +33,9 @@ public class ScoreKeeperScript : MonoBehaviour
     public void AddP2Score(int score){
         Debug.Log("Adding points to P2");
         P2Score += score;
-        if (P2Score > 7){
+        if (P2Score >= 7){
             Debug.Log("Two wins");
+            EndGame();
         }else{
             StartCoroutine(NextGame());
         }
@@ -43,16 +44,25 @@ public class ScoreKeeperScript : MonoBehaviour
     public void AddP1Score(int score){
         Debug.Log("Adding points to P2");
         P1Score += score;
-        if (P1Score > 7){
+        if (P1Score >= 7){
             Debug.Log("One wins");
+            EndGame();
         }else{
             StartCoroutine(NextGame());
         }
+    }
+
+    public void Tie(){
+        StartCoroutine(NextGame());
     }
 
     public IEnumerator NextGame(){
         yield return new WaitForSeconds(1.5f);
         int nextSceen = Random.Range(2, 4);
         SceneManager.LoadScene(nextSceen);
+    }
+
+    public void EndGame(){
+        SceneManager.LoadScene(4);
     }
 }

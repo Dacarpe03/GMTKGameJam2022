@@ -22,7 +22,6 @@ public class RefereeScript : MonoBehaviour
     private bool resultsCounted = false;
 
     private void Awake() {
-        scoreKeeperScript = FindObjectOfType<ScoreKeeperScript>();
         IEnumerable<IPlayer> players = FindObjectsOfType<MonoBehaviour>().OfType<IPlayer>();
         foreach(IPlayer p in players){
             if (p.IsOne()){
@@ -33,6 +32,10 @@ public class RefereeScript : MonoBehaviour
         }
     }
 
+    private void Start(){
+        scoreKeeperScript = FindObjectOfType<ScoreKeeperScript>();
+    }
+    
     private void Update() {
         if (P1Ready && P2Ready){
             RollDice();
@@ -85,7 +88,7 @@ public class RefereeScript : MonoBehaviour
                 roundPointsText.text = "Player 2 wins " + roundPoints.ToString() + " points";
             }else{
                 roundPointsText.text = "Tie";
-                StartCoroutine(scoreKeeperScript.NextGame());
+                scoreKeeperScript.Tie();
             }
             resultsCounted = true;
         }
