@@ -587,6 +587,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1594799802 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4395225889882720931, guid: c9dc237bceae2b04caa54f60e2957d6b, type: 3}
+  m_PrefabInstance: {fileID: 1262380919}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3760362091392092736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -695,6 +706,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2651709612514918707, guid: 142e27e46e121e24aaa35c68a357dfe0, type: 3}
+      propertyPath: roundPointsText
+      value: 
+      objectReference: {fileID: 1594799802}
     - target: {fileID: 4155952740169216767, guid: 142e27e46e121e24aaa35c68a357dfe0, type: 3}
       propertyPath: m_Name
       value: Referee
