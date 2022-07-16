@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5896946618485156727}
   - component: {fileID: 4107212897743567590}
+  - component: {fileID: 1608853244068904916}
   m_Layer: 0
   m_Name: Dice
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7247230384494112943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 2020777761, guid: 87fbcb69230e94f42a215b9bf41e027a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,3 +85,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1608853244068904916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7247230384494112943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2325ac2d5d031a84ab5324310465efd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceFaces:
+  - {fileID: 2020777761, guid: 87fbcb69230e94f42a215b9bf41e027a, type: 3}
+  - {fileID: 1701901696, guid: 87fbcb69230e94f42a215b9bf41e027a, type: 3}
+  - {fileID: 641355455, guid: 87fbcb69230e94f42a215b9bf41e027a, type: 3}
+  - {fileID: -951106039, guid: 87fbcb69230e94f42a215b9bf41e027a, type: 3}
+  - {fileID: 1843430769, guid: 87fbcb69230e94f42a215b9bf41e027a, type: 3}
+  - {fileID: -1372220496, guid: 87fbcb69230e94f42a215b9bf41e027a, type: 3}
+  - {fileID: 2023117109, guid: 87fbcb69230e94f42a215b9bf41e027a, type: 3}
+  swapTime: 0.1
