@@ -33,6 +33,8 @@ public class ScoreKeeperScript : MonoBehaviour
         P2Score += score;
         if (P2Score > 7){
             Debug.Log("Two wins");
+        }else{
+            NextGame();
         }
     }
 
@@ -40,6 +42,12 @@ public class ScoreKeeperScript : MonoBehaviour
         P1Score += score;
         if (P1Score > 7){
             Debug.Log("One wins");
+        }else{
+            NextGame();
         }
+    }
+
+    public void NextGame(){
+        return;
     }
 }

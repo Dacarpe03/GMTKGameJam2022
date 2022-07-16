@@ -10,6 +10,7 @@ public class RefereeScript : MonoBehaviour
     private bool P1Ready = false;
     private bool P2Ready = false;
     private bool diceSpawned = false;
+    private int roundPoints;
     [SerializeField] GameObject dice;
     
     private bool P1Finished;
@@ -20,7 +21,13 @@ public class RefereeScript : MonoBehaviour
     }
 
     private void Update() {
-        SpawnDice();
+        if (P1Ready && P2Ready){
+            SpawnDice();
+        }
+        
+        if (P1Finished && P2Finished){
+            CountResults();
+        }
     }
 
     void OnP1Action(InputValue value){
@@ -37,6 +44,26 @@ public class RefereeScript : MonoBehaviour
             Instantiate(dice, transform.position, Quaternion.identity);
             diceSpawned = true;
         }
+    }
+
+    void P1HasFinished(){
+        P1Finished = true;
+    }
+
+    void P2HasFinished(){
+        P2Finished = true;
+    }
+
+    void CountResults(){
+        //float P1Count = player1.GetCount();
+        //float P2Count = player2.GetCount();
+        //if (P1Count > P2Count){
+        //    scoreKeeperScript.AddP1Score(roundPoints);
+        //}else if (P2Count > P1Count){
+        //    scoreKeeperScript.AddP2Score(roundPoints);
+        //}else{
+        //    scoreKeeperScript.NextGame();
+        //}
     }
 
 }
