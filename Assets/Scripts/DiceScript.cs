@@ -33,11 +33,13 @@ public class DiceScript : MonoBehaviour
             if (white){
                 myRenderer.sprite = diceFaces[0];
             }else{
-                myRenderer.sprite = diceFaces[faceIndex];
+                myRenderer.sprite = diceFaces[faceList[faceIndex]];
                 faceIndex ++;
             }
             yield return new WaitForSeconds(swapTime);
         }
+        
+        yield return new WaitForSeconds(1f);
         refereeScript.SetRoundPoints(faceList[5]);
         Destroy(this.gameObject);
     }

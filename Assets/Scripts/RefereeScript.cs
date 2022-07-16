@@ -56,7 +56,9 @@ public class RefereeScript : MonoBehaviour
 
     public void SetRoundPoints(int points){
         roundPoints = points;
+        Debug.Log("Round points: " + roundPoints.ToString());
     }
+
     void CountResults(){
         //float P1Count = player1.GetCount();
         //float P2Count = player2.GetCount();
