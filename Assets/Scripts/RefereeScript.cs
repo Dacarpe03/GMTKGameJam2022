@@ -86,7 +86,7 @@ public class RefereeScript : MonoBehaviour
             int P2Count = playerTwo.GetCount();
             if (P1Count > P2Count){
                 scoreKeeperScript.AddP1Score(roundPoints);
-                roundPointsText.text = "Player 1 wins    " + roundPoints.ToString() + " points";
+                roundPointsText.text = "Player 1 wins " + roundPoints.ToString() + " points";
             }else if (P2Count > P1Count){
                 scoreKeeperScript.AddP2Score(roundPoints);
                 roundPointsText.text = "Player 2 wins " + roundPoints.ToString() + " points";

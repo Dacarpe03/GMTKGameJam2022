@@ -10,6 +10,8 @@ public class PlayerCliffScript : MonoBehaviour, IPlayer
     bool canMove = false;
     bool stop = false;
 
+    bool hasFallen = false;
+
     [SerializeField] float acceleration = 0.1f;
     [SerializeField] float decceleration = 0.1f;
 
@@ -52,12 +54,19 @@ public class PlayerCliffScript : MonoBehaviour, IPlayer
             if (stop){
                 rb.velocity = new Vector2(0f, 0f);
             }
+
+            if (hasFallen){
+                rb.position = Vector3.MoveTowards(transform.position, new Vector2(0f, -13f), decceleration);
+            }
         }
     }
 
     public int GetCount(){
         float fcount = Mathf.Abs(Vector2.Distance(this.transform.position, new Vector2(0f, 0f)));
         int count = (int)fcount * -100;
+        if (hasFallen){
+            count = -200000;
+        }
         return count;
     }
 
@@ -92,5 +101,11 @@ public class PlayerCliffScript : MonoBehaviour, IPlayer
         if(!isOne && canMove){
             isRunning = false;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        hasFallen = true;
+        isRunning = false;
+        Finish();
     }
 }
