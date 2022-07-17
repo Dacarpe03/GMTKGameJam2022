@@ -16,7 +16,7 @@ public class RoundInstructionsHandlerScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI p2ReadyText;
     [SerializeField] List<GameObject> destroyTexts;
 
-    void Awake(){
+    void Start(){
         ScoreKeeperScript scoreKeeperScript = FindObjectOfType<ScoreKeeperScript>();
         p1Score.text = scoreKeeperScript.GetP1Score().ToString() + "/7";
         p2Score.text = scoreKeeperScript.GetP2Score().ToString() + "/7";

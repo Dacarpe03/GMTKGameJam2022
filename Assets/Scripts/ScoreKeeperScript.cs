@@ -7,9 +7,15 @@ public class ScoreKeeperScript : MonoBehaviour
 {
     [SerializeField] int P1Score;
     [SerializeField] int P2Score;
+    private List<int> played = new List<int>();
 
     private void Awake() {
         ManageSingleton();
+    }
+
+    private void Start(){
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        played.Add(currentScene);
     }
 
     void ManageSingleton(){
@@ -58,7 +64,16 @@ public class ScoreKeeperScript : MonoBehaviour
 
     public IEnumerator NextGame(){
         yield return new WaitForSeconds(1.5f);
-        int nextSceen = Random.Range(2, 4);
+        if (played.Count >= 2){
+            played.Clear();
+        }
+        int nextSceen = 0;
+        do{
+            nextSceen = Random.Range(2, 4);
+        }while(played.Contains(nextSceen));
+
+        played.Add(nextSceen);
+        
         SceneManager.LoadScene(nextSceen);
     }
 

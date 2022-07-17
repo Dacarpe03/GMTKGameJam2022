@@ -48,6 +48,8 @@ public class DiceScript : MonoBehaviour
             p.CanStart();
         }
 
+        refereeScript.ShowGoPMsg();
+        
         Destroy(this.gameObject);
     }
 }
