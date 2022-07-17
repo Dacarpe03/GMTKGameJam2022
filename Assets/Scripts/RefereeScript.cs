@@ -76,6 +76,10 @@ public class RefereeScript : MonoBehaviour
         Debug.Log("Round points: " + roundPoints.ToString());
     }
 
+    public void ShowGoPMsg(){
+        roundPointsText.text += "\nGO!";
+    }
+
     void CountResults(){
         if (!resultsCounted){
             int P1Count = playerOne.GetCount();

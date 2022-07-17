@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerSmashScript : MonoBehaviour, IPlayer
 {
@@ -41,6 +42,28 @@ public class PlayerSmashScript : MonoBehaviour, IPlayer
 
     IEnumerator StartTimer(){
         yield return new WaitForSeconds(roundTime);
+        canMove = false;
         Finish();
     }
+
+    public void OnP1Spam(InputValue value){
+        if(isOne && canMove){
+            count += 1;
+            Vector2 newScale = transform.localScale;
+            newScale.x += 0.1f;
+            newScale.y += 0.1f;
+            transform.localScale = newScale;
+        }
+    }
+
+    public void OnP2Spam(InputValue value){
+        if(!isOne && canMove){
+            count += 1;
+            Vector2 newScale = transform.localScale;
+            newScale.x += 0.1f;
+            newScale.y += 0.1f;
+            transform.localScale = newScale;
+        }
+    }
+
 }
