@@ -6,18 +6,12 @@ public class PlayerSmashScript : MonoBehaviour, IPlayer
 {
     [SerializeField] bool isOne;
     [SerializeField] int count = 0;
-    private bool canStart = false;
+    [SerializeField] float roundTime = 4f;
+    private bool canMove = false;
     private RefereeScript refereeScript;
 
     private void Awake() {
         refereeScript = FindObjectOfType<RefereeScript>();
-    }
-
-    void Update()
-    {
-        if (canStart){
-            Finish();
-        }
     }
 
     public int GetCount(){
@@ -25,7 +19,8 @@ public class PlayerSmashScript : MonoBehaviour, IPlayer
     }
     
     public void CanStart(){
-        canStart = true;
+        canMove = true;
+        StartCoroutine(StartTimer());
     }
 
     public void Finish(){
@@ -42,5 +37,10 @@ public class PlayerSmashScript : MonoBehaviour, IPlayer
 
     public bool IsOne(){
         return isOne;
+    }
+
+    IEnumerator StartTimer(){
+        yield return new WaitForSeconds(roundTime);
+        Finish();
     }
 }
